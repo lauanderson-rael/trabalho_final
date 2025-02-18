@@ -22,6 +22,7 @@ class UsuarioController{
       let usuario = {
         email: req.body.email,
         senha: req.body.senha,
+        nome: req.body.nome,
         tipo: 1
       }
 

@@ -20,4 +20,5 @@ const Usuario = banco.sequelize.define('usuario', {
     }
 })
 
+Usuario.sync()
 export default Usuario
