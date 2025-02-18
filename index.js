@@ -51,7 +51,11 @@ import usuario from "./routes/usuario.js"
 app.use('/usuario', usuario)
 
 app.use('/', (req, res) => {
-    res.render('admin/index')
+    if(req?.user?.tipo == 0) {
+      res.render('admin/index')
+    } else {
+      res.render('sala/index')
+    }
 })
 
 

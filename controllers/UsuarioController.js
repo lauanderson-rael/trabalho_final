@@ -14,6 +14,7 @@ class UsuarioController{
 
     logout = (req, res, next) => {
         req.logout(function(erro){
+            res.locals.usuario = null
             res.redirect('/usuario/login')
         })
     }
