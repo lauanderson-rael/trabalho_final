@@ -11,6 +11,7 @@ import session from 'express-session'
 import flash from 'connect-flash'
 import passport from 'passport'
 import auth from './config/auth.js'
+import categoriaUsuario from './utils/categoriaUsuario.js';
 auth(passport)
 
 //CONFIGURAR O TEMPLATE PADRÃO
@@ -36,6 +37,7 @@ app.use(function (req, res, next){
   res.locals.error_msg = req.flash("error_msg")
   res.locals.error = req.flash('error')
   res.locals.usuario = req.user || null
+  res.locals.categoriaUsuario = categoriaUsuario[res.locals.usuario?.tipo]
   next()
 })
 
