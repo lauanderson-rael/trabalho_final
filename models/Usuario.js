@@ -14,6 +14,9 @@ const Usuario = banco.sequelize.define('usuario', {
     },
     tipo: {
         type: banco.Sequelize.INTEGER
+    },
+    nome: {
+      type: banco.Sequelize.STRING
     }
 })
 
