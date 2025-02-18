@@ -1,18 +1,38 @@
-
-{{!-- usuario e opcoes  --}}
+{{!-- usuario e opcoes --}}
 <div class="row m-0 p-0">
+
+    <div class="col-sm-3">
+        <div class="m-2 p-3 border border-1 rounded rounded-3 bg-body-secondary">
+            <img src="/img/admin.png" class="w-50 d-block mx-auto">
+            <h4 class="text-center mt-3" style>Raimundo</h4>
+            <h5 class="text-center" style="color: green">Categoria:
+                Administrador</h5>
+        </div>
+    </div>
 
     <div class="col-sm-9">
         <nav class="navbar bg-body-secondary mt-2 rounded rounded-3">
             <div class="container-fluid">
                 <h3 class="navbar-brand">Menu</h3>
                 <nav class="nav">
+                    <a class="btn btn-sm btn-outline-success mx-2" href="/usuario/cadastro">
+                        <i class="fa-solid fa-box-open"></i>
+                        Usuários
+                    </a>
 
-                    <a class="btn btn-sm btn-outline-primary mx-2" href="/aluno"><i
-                            class="fa-solid fa-box-open"></i>Lista de xxxxx</a>
+                    <a class="btn btn-sm btn-outline-primary mx-2" href="/aluno">
+                        <i class="fa-solid fa-box-open"></i>
+                        Salas
+                    </a>
 
-                    <a class="btn btn-sm btn-outline-success mx-2" href="/aluno/cadastrar"><i
-                            class="fa-solid fa-box-open"></i>Cadastro dexxx</a>
+                    <a class="btn btn-sm btn-outline-success mx-2" href="/aluno/cadastrar">
+                        <i class="fa-solid fa-box-open"></i>Reservas
+                    </a>
+
+                    <a class="btn btn-sm btn-outline-primary mx-2" href="/aluno/cadastrar">
+                        <i class="fa-solid fa-box-open"></i>
+                        Avaliações
+                    </a>
 
                 </nav>
             </div>
