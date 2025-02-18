@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
-<body class="bg-dark-subtlezzz" style="background-color: #6a7879; ">
+<body class="bg-dark-subtlezzz" style="background-color: #6a7879; color: #fff ">
 
     <nav class="navbar" style="background-color: #07767b;">
         <div class="container-fluid">
@@ -16,20 +16,28 @@
                 <img src="/img/logo.png" alt="logo image" width="70px">
                 <a href="/" class="text-decoration-none text-white text-hover">Sistema de Reservas de Coworking</a>
             </span>
-            <div class="dropdown">
-                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="fa-solid fa-user"></i> Usuário
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-id-card"></i> Meus Dados</a></li>
 
-                    <div class="dropdown-divider"></div>
-                    <li>
-                        <a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
-                    </li>
-                </ul>
-            </div>
+            {{#if usuario}}
+
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-user"></i> Usuário
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-id-card"></i> Meus Dados</a></li>
+
+                        <div class="dropdown-divider"></div>
+                        <li>
+                            <a class="dropdown-item" href="/usuario/logout"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+                        </li>
+                    </ul>
+                </div>
+            {{else}}
+                <a href="/usuario/login" class="btn btn-light">LOGIN</a>
+            {{/if}}
+
+
         </div>
     </nav>
 
