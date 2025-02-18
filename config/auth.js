@@ -5,20 +5,23 @@ import bcrypt from 'bcryptjs'
 
 export default function(passport){
     passport.use(new localEstrategy(
-        {usernameField: 'username', passwordField: 'password'},
-        function(username, password, done){
+        {usernameField: 'email', passwordField: 'password'},
+        function(email, password, done){
             Usuario.findOne({
                 where:{
-                    login: username
+                    email: email
                 }
             }).then(function(usuario){
                 if(!usuario){
+                    console.log(usuario)
                     return done(null, false, {message: 'Usuário não encontrado'})
                 }
                 bcrypt.compare(password, usuario.senha, function(erro, iguais){
                     if(iguais){
+                        console.log(usuario)
                         return done(null, usuario)
                     }else{
+                        console.log(usuario)
                         return done(null, false, {message: 'Senha incorreta!'})
                     }
                 })
