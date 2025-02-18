@@ -6,7 +6,7 @@ import Handlebars from "handlebars";
 import bodyParser from "body-parser";
 import path from "path";
 import { fileURLToPath } from 'url';
-import { allowInsecurePrototypeAccess} from "@handlebars/allow-prototype-access";
+import { allowInsecurePrototypeAccess } from "@handlebars/allow-prototype-access";
 
 //CONFIGURAR O TEMPLATE PADRÃO
 app.engine('handlebars', handlebars.engine({
@@ -26,4 +26,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 ///ROTAS DO SISTEMA
 
-app.listen(5000, ()=> console.log('Servidor Rodando em http://localhost:5000'))
+app.use('/', (req, res) => {
+    res.render('admin/index')
+})
+
+app.use('/usuario', (req, res) => {
+    res.render('usuario/cadastro')
+})
+
+app.listen(5000, () => console.log('Servidor Rodando em http://localhost:5000'))

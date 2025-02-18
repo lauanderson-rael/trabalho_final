@@ -1,0 +1,42 @@
+<div class="col-md-6 mx-auto shadow p-3 mt-2 bg-body rounded-4">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <h1 class="navbar-brand">Cadastro de Usuario</h1>
+
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="btn btn-sm btn-secondary" href="/produto" ><i class="fa-solid fa-angle-left"></i> Voltar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <form method="post" action="/usuario/salvar">
+        <fieldset>
+            <legend>CADASTRO DE USUARIO</legend>
+            
+            <label for="">NOME DE USUARIO</label>   
+            <input class="form-control" type="text" name="username">
+
+            <label for="">SENHA</label>
+            <input class="form-control" type="password" name="senha">
+
+            <label  for="" >CATEGORIA</label><br>
+            <select  class="form-select" name="categoria">
+                <option value="1">ADMIN</option>
+                <option value="0">PADRÃO</option>
+            </select>
+
+            <label> PESSSOA</label>
+            <select  class="form-select" name="pessoa_id">
+                {{#each pessoas}}
+                    <option value="{{id}}"> {{nome}}</option>
+                {{/each}}
+
+            </select>
+            
+            <button class="btn btn-success mt-2" type="submit"> SALVAR</button>
+        </fieldset>
+    </form>
+</div>
+
