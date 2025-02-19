@@ -1,29 +1,33 @@
-<table class="table container rounded">
-  <thead class="">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Email</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Tipo</th>
-      <th scope="col">Açoes</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each usuarios}}
-    <tr>
-      <th scope="row">{{id}}</th>
-      <td>{{email}}</td>
-      <td>{{nome}}</td>
-      <!-- LOOKUP foi usado para interagir com o object categoriaUsuario q foi passado no controller, sem que isso compromenta o comportamento do for each-->
-      <td>{{lookup ../categoriaUsuario tipo}}</td>
-      <td>
-        <a href="/usuario/usuario?id={{id}}" class="btn btn-primary">Editar</a>
-        <a href="/usuario/deletar/{{id}}" class="btn btn-danger"
-          onclick="return confirm('Tem certeza que deseja deletar este usuário?')">Deletar</a>
-      </td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
+<div class="container bg-body text-black mt-4 p-4 rounded">
+  <h2 class="text-center">Lista de Usuarios</h2>
 
-<a href="/usuario/cadastrar" class="btn btn-light">CADASTRAR USUÁRIO</a>
+  <table class="table">
+    <thead class="">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Email</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Açoes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each usuarios}}
+      <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{email}}</td>
+        <td>{{nome}}</td>
+        <!-- LOOKUP foi usado para interagir com o object categoriaUsuario q foi passado no controller, sem que isso compromenta o comportamento do for each-->
+        <td>{{lookup ../categoriaUsuario tipo}}</td>
+        <td>
+          <a href="/usuario/usuario?id={{id}}" class="btn btn-primary">Editar</a>
+          <a href="/usuario/deletar/{{id}}" class="btn btn-danger"
+            onclick="return confirm('Tem certeza que deseja deletar este usuário?')">Deletar</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <a href="/usuario/cadastrar" class="btn btn-primary">CADASTRAR USUÁRIO</a>
+</div>
