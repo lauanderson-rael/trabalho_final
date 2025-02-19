@@ -45,10 +45,15 @@ app.use(function (req, res, next){
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(express.static('public'))
+
 
 ///ROTAS DO SISTEMA
 import usuario from "./routes/usuario.js"
 app.use('/usuario', usuario)
+
+import sala from './routes/sala.js'
+app.use('/sala', sala)
 
 app.use('/', (req, res) => {
     if(req?.user?.tipo == 0) {

@@ -37,7 +37,7 @@ class UsuarioController{
 
           Usuario.create(usuario).then(()=> {
             req.flash('success_msg', 'Usuário cadastrado com sucesso!')
-            res.redirect('/sala')
+            res.redirect('/')
           }).catch(function (error) {
             req.flash('error_msg', error.message)
           })

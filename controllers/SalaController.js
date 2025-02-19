@@ -1,6 +1,6 @@
 class SalaController {
     index = (req, res) => {
-        res.render('sala/index')
+      res.render('sala/index')
     }
 }
 
