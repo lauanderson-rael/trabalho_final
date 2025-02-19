@@ -3,6 +3,7 @@ import Sala from '../models/Sala.js'
 class SalaController {
 
   index = async (req, res) => {
+    console.log("============= funcao listar salas ===============")
     let salas = await Sala.findAll()
     res.render('sala/index', { salas })
   }

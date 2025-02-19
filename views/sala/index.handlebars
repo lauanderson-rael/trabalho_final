@@ -1,22 +1,10 @@
-<h2>Teste de listragem de salas</h2>
-{{#each salas}}
-{{id}}
-{{nome}}
-{{descricao}}
-{{capacidade}}
-{{disponibilidade}}
-{{preco_hora}}
-{{/each}}
+<h2 class="text-center">Listragem de salas</h2>
 
-
-
-{{!-- com estilos --}}
-
-{{!-- <div class="container mt-4">
+<div class="container mt-4">
     <div class="row">
         {{#each salas}}
         <div class="col-md-6 mb-3">
-            <div class="card">
+            <div class="card shadow">
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">Sala <span>{{id}}</span> - <span>{{nome}}</span></h5>
                 </div>
@@ -35,4 +23,4 @@
         </div>
         {{/each}}
     </div>
-</div> --}}
+</div>
