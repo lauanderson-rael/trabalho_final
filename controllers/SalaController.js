@@ -27,6 +27,12 @@ class SalaController {
     })
 
   }
+  // captura sala individualmente
+  // sala = async (req, res) => {
+  //   let salaId = req.params.id
+  //   let sala = await Sala.find(salaId)
+  //   res.render('sala/sala', { sala: sala})
+  // }
 
 }
 

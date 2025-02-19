@@ -32,4 +32,5 @@ Reserva.belongsTo(Sala, {
     as: 'sala'
 })
 
+Reserva.sync()
 export default Reserva

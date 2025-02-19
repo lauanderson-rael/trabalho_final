@@ -8,17 +8,19 @@
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">Sala <span>{{id}}</span> - <span>{{nome}}</span></h5>
                 </div>
-                <div class="card-body">
-                    <p><strong>Capacidade:</strong> <span>{{capacidade}} pessoas</span></p>
-                    <p><strong>Descrição:</strong> <span>{{descricao}}</span></p>
-                    <p>
-                        <strong>Disponibilidade:</strong>
-                        <span class="badge {{#if disponibilidade}}bg-success{{else}}bg-danger{{/if}}">
-                            {{#if disponibilidade}}Disponível{{else}}Indisponível{{/if}}
-                        </span>
-                    </p>
-                    <p><strong>Preço por hora:</strong> <span>R$ {{preco_hora}}</span></p>
-                </div>
+                <a href="/reserva/reserva?sala_id={{{id}}}&usuario_id={{{usuario?.id}}}" style="text-decoration: none; color: inherit">
+                  <div class="card-body">
+                      <p><strong>Capacidade:</strong> <span>{{capacidade}} pessoas</span></p>
+                      <p><strong>Descrição:</strong> <span>{{descricao}}</span></p>
+                      <p>
+                          <strong>Disponibilidade:</strong>
+                          <span class="badge {{#if disponibilidade}}bg-success{{else}}bg-danger{{/if}}">
+                              {{#if disponibilidade}}Disponível{{else}}Indisponível{{/if}}
+                          </span>
+                      </p>
+                      <p><strong>Preço por hora:</strong> <span>R$ {{preco_hora}}</span></p>
+                  </div>
+                </a>
             </div>
         </div>
         {{/each}}
