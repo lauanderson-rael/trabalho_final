@@ -19,5 +19,6 @@ router.get('/usuarios', logado, UsuarioController.listarUsuarios)
 
 router.get('/usuario', UsuarioController.getUsuario)
 router.post('/atualizar/:id', UsuarioController.atualizarUsuario)
+router.get('/deletar/:id', UsuarioController.excluirUsuario)
 
 export default router

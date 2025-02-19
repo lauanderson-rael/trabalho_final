@@ -71,7 +71,18 @@ class UsuarioController{
       res.render('usuario/usuarios', { usuarios: usuarios, categoriaUsuario: categoriaUsuario })
     }
 
+    excluirUsuario = async (req, res) => {
+      let id = req.params.id;
+      let usuario = await Usuario.findByPk(id);
+      console.log(usuario)
 
+      if (!usuario) {
+        return res.status(404).send('Usuário não encontrado');
+      }
+  
+      await Usuario.destroy({ where: { id } });
+      res.redirect('/usuario/usuarios');
+    }
 }
 
 export default new UsuarioController()
