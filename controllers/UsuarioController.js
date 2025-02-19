@@ -55,6 +55,12 @@ class UsuarioController{
       res.render('usuario/usuario', { usuario: usuario})
     }
 
+    dadosUsuario = async (req, res) => {
+      let id = req.params.id
+      let usuario = await Usuario.findByPk(id)
+      res.render('usuario/dados', { usuario: usuario})
+    }
+
     atualizarUsuario = async (req, res) => {
       let id = req.params.id
       let { nome, email, senha, tipo } = req.body;
