@@ -48,6 +48,24 @@ class UsuarioController{
       })
     }
 
+
+    getUsuario = async (req, res) => {
+      let id = req.query.id
+      let usuario = await Usuario.findByPk(id)
+      res.render('usuario/usuario', { usuario: usuario})
+    }
+
+    atualizarUsuario = async (req, res) => {
+      let id = req.params.id
+      let { nome, email, senha, tipo } = req.body;
+      let usuario = await Usuario.findByPk(id)
+      if (!usuario) {
+        return res.send('Usuário não encontrado');
+      }
+      Usuario.update({ nome, email, senha, tipo }, { where: { id } })
+      res.redirect('/usuario/usuarios');
+    }
+
     listarUsuarios = async (req, res) => {
       let usuarios = await Usuario.findAll()
       res.render('usuario/usuarios', { usuarios: usuarios, categoriaUsuario: categoriaUsuario })
