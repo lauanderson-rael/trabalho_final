@@ -45,6 +45,11 @@ class UsuarioController{
       })
     }
 
+    listarUsuarios = async (req, res) => {
+      let usuarios = await Usuario.findAll()
+      res.render('usuario/usuarios', { usuarios: usuarios })
+    }
+
 
 }
 
