@@ -1,1 +1,38 @@
-Arquivo de salas
+<h2>Teste de listragem de salas</h2>
+{{#each salas}}
+{{id}}
+{{nome}}
+{{descricao}}
+{{capacidade}}
+{{disponibilidade}}
+{{preco_hora}}
+{{/each}}
+
+
+
+{{!-- com estilos --}}
+
+{{!-- <div class="container mt-4">
+    <div class="row">
+        {{#each salas}}
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Sala <span>{{id}}</span> - <span>{{nome}}</span></h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Capacidade:</strong> <span>{{capacidade}} pessoas</span></p>
+                    <p><strong>Descrição:</strong> <span>{{descricao}}</span></p>
+                    <p>
+                        <strong>Disponibilidade:</strong>
+                        <span class="badge {{#if disponibilidade}}bg-success{{else}}bg-danger{{/if}}">
+                            {{#if disponibilidade}}Disponível{{else}}Indisponível{{/if}}
+                        </span>
+                    </p>
+                    <p><strong>Preço por hora:</strong> <span>R$ {{preco_hora}}</span></p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div> --}}
