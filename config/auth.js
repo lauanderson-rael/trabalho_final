@@ -4,6 +4,7 @@ import Usuario from '../models/Usuario.js'
 import bcrypt from 'bcryptjs'
 
 export default function(passport){
+    // Estratégia de autentiação, usando o email do usuário
     passport.use(new localEstrategy(
         {usernameField: 'email', passwordField: 'password'},
         function(email, password, done){

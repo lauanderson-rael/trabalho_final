@@ -24,4 +24,5 @@ const Sala = banco.sequelize.define('sala', {
 
 })
 
+Sala.sync()
 export default Sala

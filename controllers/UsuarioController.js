@@ -22,12 +22,19 @@ class UsuarioController{
         })
     }
 
-    cadastrar = (req, res) => {
+    cadastrar = async (req, res) => {
       let usuario = {
         email: req.body.email,
         senha: req.body.senha,
         nome: req.body.nome,
         tipo: req.body.tipo
+      }
+
+      let find_usuario = await Usuario.findOne({ where: { email: usuario.email } });
+
+      if(find_usuario) {
+        req.flash('error_msg', 'Já existe um usuário cadastrado com esse e-mail!')
+        res.redirect('/usuario/cadastrar') 
       }
 
       bcrypt.genSalt(10, (erro, salt) => {

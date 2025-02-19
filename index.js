@@ -60,7 +60,7 @@ app.use('/', (req, res) => {
   if (req?.user?.tipo == 0) {
     res.render('admin/index')
   } else {
-    res.render('sala/index')
+    res.redirect('/sala/index')
   }
 })
 
