@@ -14,4 +14,6 @@ router.get('/cadastrar', (req, res) =>  {
     })
 router.post('/cadastrar', UsuarioController.cadastrar)
 
+router.get('/usuarios', UsuarioController.listarUsuarios)
+
 export default router
