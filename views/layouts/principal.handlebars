@@ -16,7 +16,8 @@
     <nav class="navbar" style="background-color: #07767b;">
         <div class="container-fluid">
             <span class="navbar-brand text-white mb-0 h1">
-                <img src="/img/logo.png" alt="logo image" width="70px">
+              <a href="/"><img src="/img/logo.png" alt="logo image" width="70px"></a>
+                
                 <a href="/" class="text-decoration-none text-white text-hover">Sistema de Reservas de Coworking</a>
             </span>
 
@@ -37,7 +38,11 @@
                     </ul>
                 </div>
             {{else}}
+            <div>
+
                 <a href="/usuario/login" class="btn btn-light">LOGIN</a>
+                <a href="/usuario/cadastrar" class="btn btn-primary">CADASTRE-SE</a>
+            </div>
             {{/if}}
 
 
