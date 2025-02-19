@@ -1,0 +1,29 @@
+<div class="container-sm mt-4  w-50 bg-body rounded text-black p-4">
+    <h2 class="text-center mb-4">Cadastro de Salas</h2>
+
+    <form id="cadastro-form" action="/sala/salvar" method="post">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" required>
+
+
+        <label for="capacidade" class="form-label">Capacidade</label>
+        <input type="number" class="form-control" id="capacidade" name="capacidade" required>
+
+
+        <label for="descricao" class="form-label">Descrição</label>
+        <input type="text" class="form-control" id="descricao" name="descricao" required>
+
+
+        <label for="preco_hora" class="form-label">Preço por Hora (R$)</label>
+        <input type="number" class="form-control" id="preco_hora" name="preco_hora" required>
+
+
+        <label for="disponibilidade" class="form-label">Disponibilidade</label>
+        <select class="form-select" id="disponibilidade" name="disponibilidade">
+            <option value="1">Disponível</option>
+            <option value="0">Indisponível</option>
+        </select>
+        <button type="submit" class="mt-4 btn btn-primary">Cadastrar Sala</button>
+    </form>
+
+</div>

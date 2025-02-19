@@ -16,8 +16,8 @@ auth(passport)
 
 //CONFIGURAR O TEMPLATE PADRÃO
 app.engine('handlebars', handlebars.engine({
-    defaultLayout: 'principal',
-    handlebars: allowInsecurePrototypeAccess(Handlebars)
+  defaultLayout: 'principal',
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
 }));
 app.set('view engine', 'handlebars');
 
@@ -32,7 +32,7 @@ app.use(passport.session())
 app.use(flash())
 
 // Variáveis globais
-app.use(function (req, res, next){
+app.use(function (req, res, next) {
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg")
   res.locals.error = req.flash('error')
@@ -53,14 +53,15 @@ import usuario from "./routes/usuario.js"
 app.use('/usuario', usuario)
 
 import sala from './routes/sala.js'
+app.use('/', sala)
 app.use('/sala', sala)
 
 app.use('/', (req, res) => {
-    if(req?.user?.tipo == 0) {
-      res.render('admin/index')
-    } else {
-      res.render('sala/index')
-    }
+  if (req?.user?.tipo == 0) {
+    res.render('admin/index')
+  } else {
+    res.render('sala/index')
+  }
 })
 
 
