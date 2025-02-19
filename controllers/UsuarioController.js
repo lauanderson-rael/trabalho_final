@@ -1,6 +1,7 @@
 import Usuario from '../models/Usuario.js';
 import passport from 'passport';
 import bcrypt from 'bcryptjs'
+import categoriaUsuario from '../utils/categoriaUsuario.js';
 
 class UsuarioController{
 
@@ -8,7 +9,9 @@ class UsuarioController{
         passport.authenticate('local', {
             successRedirect: '/admin',
             failureRedirect: '/usuario/login',
-            failureFlash: true
+            failureFlash: true,
+            failureMessage: 'Usuário não autenticado! Tente novamente!',
+            successMessage: 'Usuário logado com sucesso!'
         })(req, res, next)
     }
 
@@ -24,7 +27,7 @@ class UsuarioController{
         email: req.body.email,
         senha: req.body.senha,
         nome: req.body.nome,
-        tipo: 1
+        tipo: req.body.tipo
       }
 
       bcrypt.genSalt(10, (erro, salt) => {
@@ -47,7 +50,7 @@ class UsuarioController{
 
     listarUsuarios = async (req, res) => {
       let usuarios = await Usuario.findAll()
-      res.render('usuario/usuarios', { usuarios: usuarios })
+      res.render('usuario/usuarios', { usuarios: usuarios, categoriaUsuario: categoriaUsuario })
     }
 
 

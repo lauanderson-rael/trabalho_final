@@ -4,6 +4,7 @@
       <th scope="col">ID</th>
       <th scope="col">Email</th>
       <th scope="col">Nome</th>
+      <th scope="col">Tipo</th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +13,8 @@
             <th scope="row">{{id}}</th>
             <td>{{email}}</td>
             <td>{{nome}}</td>
+            <!-- LOOKUP foi usado para interagir com o object categoriaUsuario q foi passado no controller, sem que isso compromenta o comportamento do for each-->
+            <td>{{lookup ../categoriaUsuario tipo}}</td> 
         </tr>
     {{/each}}
   </tbody>
