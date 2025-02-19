@@ -1,0 +1,40 @@
+<div class="container-sm mt-2">
+    <nav class="navbar bg-body-tertiary rounded-top-4 rounded-bottom-0">
+        <div class="container-fluid">
+            <h3 class="navbar-brand">Reservas Realizadas</h3>
+
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="btn btn-sm btn-primary mx-2" href="/reserva/cadastro"><i class="fa-solid fa-plus"></i>
+                        Nova</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-sm btn-secondary" href="/"><i class="fa-solid fa-angle-left"></i> Voltar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <table class="table table-striped">
+        <tr>
+            <th class="col-1">ID</th>
+            <th class="col-1">INICIO</th>
+            <th class="col-5">FIM</th>
+            <th class="col-2">USUARIO_ID</th>
+            <th class="col-2">SALA_ID</th>
+
+        </tr>
+        {{#each reservas}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{data_inicio}}</td>
+            <td>{{data_fim}}</td>
+            <td>{{usuario_id}}</td>
+            <td>{{sala_id}}</td>
+        </tr>
+
+        {{/each}}
+
+    </table>
+
+</div>

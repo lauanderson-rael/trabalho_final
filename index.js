@@ -64,5 +64,7 @@ app.use('/', (req, res) => {
   }
 })
 
+import reserva from './routes/reserva.js';
+app.use('/reserva', reserva)
 
 app.listen(5000, () => console.log('Servidor Rodando em http://localhost:5000'))
