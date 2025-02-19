@@ -2,7 +2,7 @@ import Sequelize from 'sequelize'
 
 const DB_NAME = 'trabalho_final'
 const USER_NAME = 'root'
-const PASSWORD = 'dennisLindo'
+const PASSWORD = ''
 const HOST = 'localhost'
 
 const sequelize = new Sequelize(DB_NAME, USER_NAME, PASSWORD, {

@@ -5,6 +5,9 @@ class SalaController {
   index = async (req, res) => {
     console.log("============= funcao listar salas ===============")
     let salas = await Sala.findAll()
+    if (salas.length === 0){
+      res.render('sala/vazio')
+    }
     res.render('sala/index', { salas })
   }
 

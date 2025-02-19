@@ -11,8 +11,4 @@ router.get('/cadastrar', (req, res) => {
         res.render('errors/401')
     }
 })
-// router.get('/cadastrar', (req, res) => {
-//     res.render('sala/cadastrar')
-// })
-
 export default router
